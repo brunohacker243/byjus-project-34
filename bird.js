@@ -3,11 +3,12 @@ class Bird {
         //this.body = Bodies.rectangle(x,y,width,height);
         // this.x = x;
         // this.y = y;
-        this.width = 50;
+        this.body = Bodies.rectangle(x,y,width,height);
+        this.width = width;
         this.height = height;
         this.animation = birdAnim;
         this.speed = 0.05;
-        this.body = Bodies.rectangle(x,y,width,height);
+        
         World.add(world,this.body);
     }
     show() {
@@ -26,10 +27,10 @@ class Bird {
     }
     
     fly() {
-        Matter.Body.setVelocity(this.body,{x:0,y:-0.01});
-        Matter.Body.applyForce(this.body,this.body.position,{x:0,y:-0.01});
+        Matter.Body.setVelocity(this.body,{x:0,y:-0.08});
+        Matter.Body.applyForce(this.body,this.body.position,{x:0,y:-0.08});
     }
     animate() {
-        this.speed += 0.01;
+        this.speed += 0.5;
     }
 }

@@ -20,14 +20,14 @@ function setup() {
   world = engine.world;
 
   let birdFrames = birdSpritedata.frames;
-  for(let i = 0; i < birdFrames.length; i++)
-  {
+
+  for(let i = 0; i < birdFrames.length; i++){
     let pos = birdFrames[i].position;
     let img = birdSpritesheet.get(pos.x,pos.y,pos.w,pos.h);
     birdAnim.push(img);
   }
-
-  bird = new Bird(50,200,20,20,birdAnim);
+console.log(birdAnim)
+  bird = new Bird(50,200,50,50,birdAnim);
 }
 
 
@@ -58,3 +58,19 @@ function createPipes() {
     pipes.push(pipe);
   }
 }
+
+
+
+/*                                     Notas da prof 
+E ai Bruno? tudo bom?
+O Código em si não era o problema...
+A primeira coisa que eu fiz pra resolver foi ver se o array de animação realmente estava
+recebendo as imagens, sabe? Ai usei um console.log nele e minhas suspeitas estavam corretas!
+abri o arquivo json e lá estava o problema, você estava passando os parametros lá de forma incorreta,
+lembre-se que tudo é um grande *ARRAY*, logo devemos usar cochetes no inicio, estava com chaves.
+Então arrumei as chaves e colchetes, tirei tudo o que o computador não precisava ler, e mudei o nome do parametro 
+no json de "frame" para "position". Tudo certo, o projeto funcionou!  Ai tomei a liberdade de mudar
+o tamanho do passarinho e a força sobre ele, mas veja ai o que você acha :D
+
+Haaaapy Hacking!
+*/
