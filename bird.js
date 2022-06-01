@@ -31,6 +31,6 @@ class Bird {
         Matter.Body.applyForce(this.body,this.body.position,{x:0,y:-0.08});
     }
     animate() {
-        this.speed += 0.5;
+        this.speed += 0.25;
     }
 }
